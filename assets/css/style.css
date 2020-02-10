@@ -1,8 +1,11 @@
-h1{
-  font-size: x-large;
-  font-weight: bold;
+@font-face {
+	font-family: stjedise;
+	src: url(../fonts/STJEDISE.TTF);
 }
 
-p{
-  margin: 20px;
+body{
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  background: url("http://wallpapercave.com/wp/pEeUsp1.jpg"); */
+  font-size: 16px;
 }
