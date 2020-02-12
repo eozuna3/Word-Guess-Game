@@ -6,7 +6,8 @@
   <title>Word Guess Game</title>
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <link rel="javascriptsheet" type="text/javascript" href="assets/javascript/game.js">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Sawarabi+Gothic&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <meta name="author" content="Eduardo Ozuna">
@@ -21,26 +22,57 @@
         Wars Image">
       </div>
       <div class="col-md-6 mx-auto my-auto">
-        <h1 class="font-weight-bolder font-italic text-center" style="color: yellow; font-family: stjedise;">Star Wars Word Guess Game</h1>
+        <h1 class="font-weight-bolder font-italic text-center" style="color: yellow; font-family: stjedise;">Star Wars Name Guess Game
+        </h1>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid clear" id="main-section">
-    <div class="row"
-  </div>
+  <div class="container-fluid" id="main-section">
+    <div class="row w-100 p-5"></div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 clear border border-warning rounded">
+          <img src="assets/images/kylo.gif" class="img-fluid" style="width: 100%;" alt="Kylo Image">
+        </div>
+        <div class="col-md-4 clear border border-warning rounded">
+          <img src="assets/images/Rebel-symbol.jpg" class="img-fluid" style="width: 100%;" alt="Rebel-Icon Image">
+          <div class="rows h-75 pt-5">
+            <h4 id="Instructions" class="text-center">Press any key to get started.</h4>
+            <br>
+            <br>
+            <h4 id="wins-Text" class="text-center">Wins: </h4>
+            <br>
+            <br>
+            <h4 class="text-center">Current Word:</h4>
+            <br>
+            <h4 id="currentWord-Text" class="text-center"></h4>
+            <br>
+            <br>
+            <h4 id="guessesRemaining-Text" class="text-center">Guess Remaining: </h4>
+            <br>
+            <br>
+            <h4 class="text-center">Letters already guessed:</h4>
+            <h4 id="guessedLetters-Text" class="text-center"></h4>
+            <br>
+            <br>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
 
-  <!-- Script tags -->
-  <script src="assets/javascript/game.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    </div>
+
+    <!-- Script tags -->
+    <script src="assets/javascript/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
