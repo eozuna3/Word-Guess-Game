@@ -74,9 +74,12 @@ function newGame() {
 
 //Play audio for start of new game, when player wins, and when he loses
 function updateAudio(audioFile) {
+  var x = document.getElementById("audio");
+  x.setAttribute("src", "assets/music/silence.mp3");
   musicElement.setAttribute("src", audioFile);
   musicElement.autoplay = true;
   musicElement.volume = 0.2;
+
 }
 
 /*---------------------------Inital Establishment of Game-----------------------------*/
