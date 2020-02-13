@@ -15,6 +15,9 @@ var winsText = document.getElementById("wins-Text");
 var guessesRemainingText = document.getElementById("guessesRemaining-Text");
 var instructionText = document.getElementById("Instructions");
 var currentWordText = document.getElementById("currentWord-Text");
+var mainImageText = document.getElementById('main-image');
+var imageInstructionsText = document.getElementById("imageInstructions");
+var musicElement = document.getElementById("music");
 
 /*---------------- Functions ---------------------------------------------------*/
 //Random Position Generator
@@ -64,10 +67,16 @@ function newGame() {
   currentWordText.textContent = currentNameArray.join(" ");
   guessesRemainingText.textContent = "Guesses left: " + guessLeft;
   guessedLettersText.textContent = "";
+  mainImageText.src = "assets/images/Starwarsposter.png";
+  imageInstructionsText.textContent = "";
+	
 }
 
 /*---------------------------Inital Establishment of Game-----------------------------*/
 newGame();
+musicElement.innerHTML = "<source src='assets/music/Theme-Song.mp3' type='audio/mpeg'>";
+musicElement.load();
+musicElement.play();
 
 /*--------------------------Start of the game-------------------------------------*/
 document.onkeypress = function (event) {
@@ -100,7 +109,10 @@ document.onkeypress = function (event) {
           currentWordText.textContent = currentNameArray.join(" ");
           guessesRemainingText.textContent = "Guesses left: " + guessLeft;
           guessedLettersText.textContent = guessArray;
-          alert("Congrats, you won!!!!!  To play again please press space bar");
+          mainImageText.src = "assets/images/yodacongrats.jpg";
+          imageInstructionsText.textContent = "Congrats, you won!!!!!  To play again please press space bar";
+
+          //alert("Congrats, you won!!!!!  To play again please press space bar");
 
           //If they don't complete the word, but have not reached the end of their choices        
         } else if (guessLeft > 0) {
@@ -115,11 +127,13 @@ document.onkeypress = function (event) {
           currentWordText.textContent = currentNameArray.join(" ");
           guessesRemainingText.textContent = "Guesses left: " + guessLeft;
           guessedLettersText.textContent = guessArray;
-          alert("Sorry, you lose. Please try again.  Press the space bar to start a new game");
+          mainImageText.src = "assets/images/Noooo.jpg";
+          imageInstructionsText.textContent = "Sorry, You lose. Please try again. Press the space bar to start a new game";
+          //alert("Sorry, you lose. Please try again.  Press the space bar to start a new game");
         }
       }
     } else {
-      alert("You need to restart a new game.  Please press the space bar to start a new game.");
+      alert("You need to start a new game.  Please press the space bar to start a new game.");
     }
   } else if (userGuessKey1 == 32 || userGuessKey2 == 32) {
     newGame();

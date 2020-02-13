@@ -22,7 +22,8 @@
         Wars Image">
       </div>
       <div class="col-md-6 mx-auto my-auto">
-        <h1 class="font-weight-bolder font-italic text-center" style="color: yellow; font-family: stjedise;">Star Wars Name Guess Game
+        <h1 class="font-weight-bolder font-italic text-center" style="color: yellow; font-family: stjedise;">Star Wars
+          Name Guess Game
         </h1>
       </div>
     </div>
@@ -30,38 +31,42 @@
 
   <div class="container-fluid" id="main-section">
     <div class="row w-100 p-5"></div>
-      <div class="row">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4 clear border border-warning rounded">
+        <div class="row h-75">
+          <img id="main-image" src="" class="img-fluid" style="width: 100%;" alt="">   
+        </div>
+        <br>
+        <br>
+        <h4 id="imageInstructions" class="text-center"></h4>
+      </div>
+      <div class="col-md-4 clear border border-warning rounded">
+        <img src="assets/images/Rebel-symbol.jpg" class="img-fluid" style="width: 100%;" alt="Rebel-Icon Image">
+        <div class="rows h-75 pt-5">
+          <h4 id="Instructions" class="text-center">Press any key to get started.</h4>
+          <br>
+          <br>
+          <h4 id="wins-Text" class="text-center">Wins: </h4>
+          <br>
+          <br>
+          <h4 class="text-center">Current Word:</h4>
+          <br>
+          <h4 id="currentWord-Text" class="text-center"></h4>
+          <br>
+          <br>
+          <h4 id="guessesRemaining-Text" class="text-center">Guess Remaining: </h4>
+          <br>
+          <br>
+          <h4 class="text-center">Letters already guessed:</h4>
+          <h4 id="guessedLetters-Text" class="text-center"></h4>
+          <br>
+          <br>
+        </div>
         <div class="col-md-2"></div>
-        <div class="col-md-4 clear border border-warning rounded">
-          <img src="assets/images/kylo.gif" class="img-fluid" style="width: 100%;" alt="Kylo Image">
-        </div>
-        <div class="col-md-4 clear border border-warning rounded">
-          <img src="assets/images/Rebel-symbol.jpg" class="img-fluid" style="width: 100%;" alt="Rebel-Icon Image">
-          <div class="rows h-75 pt-5">
-            <h4 id="Instructions" class="text-center">Press any key to get started.</h4>
-            <br>
-            <br>
-            <h4 id="wins-Text" class="text-center">Wins: </h4>
-            <br>
-            <br>
-            <h4 class="text-center">Current Word:</h4>
-            <br>
-            <h4 id="currentWord-Text" class="text-center"></h4>
-            <br>
-            <br>
-            <h4 id="guessesRemaining-Text" class="text-center">Guess Remaining: </h4>
-            <br>
-            <br>
-            <h4 class="text-center">Letters already guessed:</h4>
-            <h4 id="guessedLetters-Text" class="text-center"></h4>
-            <br>
-            <br>
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-
+      </div>
     </div>
-
+    <audio id="music"><source src="" type="audio/mpeg"></audio>
     <!-- Script tags -->
     <script src="assets/javascript/game.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
