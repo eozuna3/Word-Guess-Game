@@ -1,5 +1,5 @@
 /*----------------------------Variables--------------------------------------------*/
-// Creating variables to hold the number of wins, losses, guesses left, random Letter chosen, and an array to hold the list of guesses made.
+// Creating variables for use in javascript
 var completedgame = true;
 var currentNamePos = 0;
 var wins = 0;
@@ -9,7 +9,7 @@ var currentName = "";
 var currentNameArray = [];
 var characterNames = ["palpatine", "vader", "leia", "luke", "obiwan", "yoda", "hansolo", "chewbacca", "bobafett", "jabba"];
 
-// Create variables that hold references to the places in the HTML where we want to display things.
+// Create variables that hold references to specific tags in the HTML where we want to display and change items.
 var guessedLettersText = document.getElementById("guessedLetters-Text");
 var winsText = document.getElementById("wins-Text");
 var guessesRemainingText = document.getElementById("guessesRemaining-Text");
@@ -53,9 +53,9 @@ function selectNewName(position) {
   for (x = 0; x < characterNames[position].length; x++) {
     currentNameArray.push("_");
   }
-  console.log(currentName);
 }
 
+//Function for reseting the game to start
 function newGame() {
   completedgame = true;
   guessLeft = 12;
@@ -69,14 +69,19 @@ function newGame() {
   guessedLettersText.textContent = "";
   mainImageText.src = "assets/images/Starwarsposter.png";
   imageInstructionsText.textContent = "";
-	
+  updateAudio('assets/music/Theme-Song.mp3');
+}
+
+//Play audio for start of new game, when player wins, and when he loses
+function updateAudio(audioFile) {
+  musicElement.setAttribute("src", audioFile);
+  musicElement.autoplay = true;
+  musicElement.volume = 0.2;
 }
 
 /*---------------------------Inital Establishment of Game-----------------------------*/
 newGame();
-musicElement.innerHTML = "<source src='assets/music/Theme-Song.mp3' type='audio/mpeg'>";
-musicElement.load();
-musicElement.play();
+
 
 /*--------------------------Start of the game-------------------------------------*/
 document.onkeypress = function (event) {
@@ -93,15 +98,15 @@ document.onkeypress = function (event) {
     //Check to make sure current game has been completed and reset
     if (completedgame === true) {
 
-      //Check to see if user has already guessed the letter, and if so do nothing, but if not then update the letters in the name
+      //Check to see if user has already guessed the letter, and if so do nothing, but if not then update the letters in the guessArray and guessLeft
       if (alreadyGuessed(userGuess) === false) {
         guessArray.push(userGuess);
         guessLeft--;
         fillcurrentNameArray(userGuess)
-        console.log(currentNameArray);
-        console.log(guessArray);
+        //console.log(currentNameArray);
+        //console.log(guessArray);
 
-        //Check and see if they completed the word
+        //Check and see if they completed the word and if so update images, wins and play music
         if (currentNameArray.join("") === currentName) {
           completedgame = false;
           wins++;
@@ -111,8 +116,7 @@ document.onkeypress = function (event) {
           guessedLettersText.textContent = guessArray;
           mainImageText.src = "assets/images/yodacongrats.jpg";
           imageInstructionsText.textContent = "Congrats, you won!!!!!  To play again please press space bar";
-
-          //alert("Congrats, you won!!!!!  To play again please press space bar");
+          updateAudio("assets/music/Rebels.mp3");
 
           //If they don't complete the word, but have not reached the end of their choices        
         } else if (guessLeft > 0) {
@@ -129,9 +133,11 @@ document.onkeypress = function (event) {
           guessedLettersText.textContent = guessArray;
           mainImageText.src = "assets/images/Noooo.jpg";
           imageInstructionsText.textContent = "Sorry, You lose. Please try again. Press the space bar to start a new game";
-          //alert("Sorry, you lose. Please try again.  Press the space bar to start a new game");
+          updateAudio("assets/music/nooo.mp3");
         }
       }
+
+      //Make sure user hit space bar to start a new game otherwise put up alert to remind them to hit the spacebar to start again.
     } else {
       alert("You need to start a new game.  Please press the space bar to start a new game.");
     }
